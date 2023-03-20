@@ -13,8 +13,10 @@ def get_chat_str_index(str1, chat_list):
 def str_cmp_base_cnt(str1, str2):
     # determine the cur_rate by counting same words
     cnt_word = 0
-    for i in str1:
-        if i in str2:
+    str1_wordlist = str1.split( );
+    str2_wordlist = str2.split( );
+    for i in str1_wordlist:
+        if i in str2_wordlist:
             cnt_word += 1
-    cmp_rate = cnt_word * min(str1.__len__() / str2.__len__(), str2.__len__() / str1.__len__())
+    cmp_rate = cnt_word * min(str1_wordlist.__len__() / str2_wordlist.__len__(), str2_wordlist.__len__() / str1_wordlist.__len__())
     return cmp_rate, cnt_word
